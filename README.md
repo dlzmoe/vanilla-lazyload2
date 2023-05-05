@@ -4,6 +4,8 @@
 
 基于 https://github.com/verlok/vanilla-lazyload 重新构建，修改了几个适合自己的特性。
 
+示例: https://lovezsh.github.io/vanilla-lazyload2/
+
 **cdn**
 
 ```shell
