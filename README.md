@@ -15,14 +15,17 @@ https://cdn.staticaly.com/gh/lovezsh/vanilla-lazyload2@main/vanilla-lazyload.js
 ```js
 // 懒加载动画
 function callback_loaded(el) {
-  el.getAttribute('data-src') && $(el).parent().addClass('lazy-loaded');
+  if (el.getAttribute('data-src')) {
+    el.parentNode.classList.add('lazy-loaded');
+  }
 }
 
-$(function () {
-  if (typeof LazyLoad == 'function') {
-    const lazyLoadInstance = new LazyLoad({
-      element_selector: '.lazy',
-      callback_loaded
+window.addEventListener('DOMContentLoaded', function () {
+  var elements = document.querySelectorAll('.lazy');
+  if (typeof LazyLoad === 'function') {
+    var lazyLoadInstance = new LazyLoad({
+      elements_selector: '.lazy',
+      callback_loaded: callback_loaded
     });
     window.ll = lazyLoadInstance;
   }
