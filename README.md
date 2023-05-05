@@ -4,6 +4,12 @@
 
 基于 https://github.com/verlok/vanilla-lazyload 重新构建，修改了几个适合自己的特性。
 
+**cdn**
+
+```shell
+https://cdn.staticaly.com/gh/lovezsh/vanilla-lazyload2@main/vanilla-lazyload.js
+```
+
 ### 懒加载
 
 ```js
