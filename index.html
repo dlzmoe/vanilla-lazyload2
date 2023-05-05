@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vanilla-lazyload2</title>
+  <style>
+    img.lazy {
+      display: inline-block;
+      opacity: 0
+    }
+
+    img.lazy,
+    img.tst {
+      transition: opacity .6s, transform .3s ease
+    }
+
+    img.loaded {
+      opacity: 1
+    }
+
+    img:not([src]) {
+      visibility: hidden
+    }
+
+    .lazy-load {
+      display: block;
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: 50%;
+      left: 50%;
+      margin-top: -9px;
+      margin-left: -9px;
+      background-color: #ccc;
+      animation: loading 1s linear infinite;
+      border-radius: 100%
+    }
+
+    .lazy-wrap {
+      display: block;
+      position: relative;
+      overflow: hidden
+    }
+
+    .lazy-wrap::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%
+    }
+
+    .lazy-wrap.lazy-loaded .lazy-load {
+      -webkit-animation: none;
+      animation: none;
+      display: none
+    }
+
+    .lazy-wrap.lazy-loaded::after {
+      padding-bottom: 0
+    }
+
+    @keyframes loading {
+      0% {
+        transform: scale(.2);
+        opacity: 1
+      }
+
+      to {
+        transform: scale(2);
+        opacity: 0
+      }
+    }
+
+    .box {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .item {
+      width: 32%;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      vertical-align: bottom;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.Popocatepetl_ZH-CN5483138337_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.RebelBase_ZH-CN0484516261_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.ThreeWildebeest_ZH-CN0175563521_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.KlostersSerneus_ZH-CN9821473046_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.Popocatepetl_ZH-CN5483138337_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.RebelBase_ZH-CN0484516261_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.ThreeWildebeest_ZH-CN0175563521_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.KlostersSerneus_ZH-CN9821473046_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.Popocatepetl_ZH-CN5483138337_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.RebelBase_ZH-CN0484516261_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.ThreeWildebeest_ZH-CN0175563521_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.KlostersSerneus_ZH-CN9821473046_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.Popocatepetl_ZH-CN5483138337_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.RebelBase_ZH-CN0484516261_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.ThreeWildebeest_ZH-CN0175563521_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.KlostersSerneus_ZH-CN9821473046_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.Popocatepetl_ZH-CN5483138337_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.RebelBase_ZH-CN0484516261_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.ThreeWildebeest_ZH-CN0175563521_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.KlostersSerneus_ZH-CN9821473046_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.Popocatepetl_ZH-CN5483138337_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.RebelBase_ZH-CN0484516261_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.ThreeWildebeest_ZH-CN0175563521_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+    <div class="item lazy-wrap">
+      <img class="lazy" data-src="https://bing.com/th?id=OHR.KlostersSerneus_ZH-CN9821473046_1920x1080.jpg">
+      <span class="lazy-load"></span>
+    </div>
+  </div>
+  <script src="https://cdn.staticaly.com/gh/lovezsh/vanilla-lazyload2@main/vanilla-lazyload.js"></script>
+  <script>
+    function callback_loaded(el) {
+      if (el.getAttribute('data-src')) {
+        el.parentNode.classList.add('lazy-loaded');
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+      var elements = document.querySelectorAll('.lazy');
+      if (typeof LazyLoad === 'function') {
+        var lazyLoadInstance = new LazyLoad({
+          elements_selector: '.lazy',
+          callback_loaded: callback_loaded
+        });
+        window.ll = lazyLoadInstance;
+      }
+    });
+
+  </script>
+</body>
+
+</html>
